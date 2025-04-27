@@ -1,0 +1,56 @@
+user_dtls
+
+	user_id		varchar 50
+	user_name	varchar 50
+	user_email	varchar 50
+	user_passwd	varchar 20
+	user_mob	varchar 15
+	user_role	varchar 10	ADMIN, DONOR, ORGANIZER, PATIENT, VOLUNTEER
+	blood_grp	varchar 10 A+, A-, B+, B-, O+, O-, AB+, AB-
+
+1.
+CREATE DATABASE appdb;
+
+2. 
+USE appdb;
+
+3.
+CREATE TABLE user_dtls (
+    user_id int NOT NULL AUTO_INCREMENT,
+    user_name varchar(50) NOT NULL,
+    user_email varchar(50) NOT NULL,
+    user_passwd varchar(255) NOT NULL,
+    user_mob varchar(15) NOT NULL,
+    user_role varchar(10) NOT NULL,
+    blood_grp varchar(5) NOT NULL,
+    PRIMARY KEY (user_id)
+);
+
+
+CREATE TABLE contact_us (
+    user_id int NOT NULL AUTO_INCREMENT,
+    user_name varchar(50) NOT NULL,
+    user_email varchar(50) NOT NULL,
+    user_mob varchar(15) NOT NULL,
+    user_msg varchar(255) NOT NULL,
+    PRIMARY KEY (user_id)
+);
+
+passwd@123 = y7fVBonZ1AoL1ot6EUti6w==
+
+INSERT INTO user_dtls (user_name, user_email, user_passwd, user_mob, user_role, blood_grp)
+VALUES ('Shakti Ranjan', 'shakti.ranjan@gmail.com', 'y7fVBonZ1AoL1ot6EUti6w==', '+91-9937001122', 'ADMIN', 'B+');
+
+INSERT INTO user_dtls (user_name, user_email, user_passwd, user_mob, user_role, blood_grp)
+VALUES ('Manisa Swain', 'donor@gmail.com', 'y7fVBonZ1AoL1ot6EUti6w==', '+91-9937001122', 'DONOR', 'B+');
+
+INSERT INTO user_dtls (user_name, user_email, user_passwd, user_mob, user_role, blood_grp)
+VALUES ('Shreya Subhalagna', 'organizer@gmail.com', 'y7fVBonZ1AoL1ot6EUti6w==', '+91-9937001122', 'ORGANIZER', 'B+');
+
+INSERT INTO user_dtls (user_name, user_email, user_passwd, user_mob, user_role, blood_grp)
+VALUES ('Swagatika Swain', 'patient@gmail.com', 'y7fVBonZ1AoL1ot6EUti6w==', '+91-9937001122', 'PATIENT', 'B+');
+
+INSERT INTO user_dtls (user_name, user_email, user_passwd, user_mob, user_role, blood_grp)
+VALUES ('Sagarika Swain', 'volunteer@gmail.com', 'y7fVBonZ1AoL1ot6EUti6w==', '+91-9937001122', 'VOLUNTEER', 'B+');
+
+Add mysql connector jar in tomcat lib folder.
