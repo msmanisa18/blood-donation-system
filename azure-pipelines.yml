@@ -17,10 +17,3 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean package'
 
-
-- task: PublishPipelineArtifact@1
-  displayName: 'Publish Artifact'
-  inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)/publish'
-    artifact: 'drop'
-    publishLocation: 'pipeline'
