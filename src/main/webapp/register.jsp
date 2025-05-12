@@ -47,19 +47,19 @@
 				<form id="registerForm" action="UserRegistrationServlet" method="POST">
 					<div class="input-container">
 						<label for="name">Full Name</label> 
-						<input type="text" id="name" name="uname" required placeholder="Enter your full name">
+						<input type="text" id="name" name="uname" required maxlength="30" placeholder="Enter your full name">
 					</div>
 					<div class="input-container">
 						<label for="email">Email</label> 
-						<input type="email" id="email" name="email" required placeholder="Enter your email">
+						<input type="email" id="email" name="email" required maxlength="30" placeholder="Enter your email">
 					</div>
 					<div class="input-container">
 						<label for="confirm-password">Password</label> 
-						<input type="password" id="password" name="upass" required placeholder="Confirm your password">
+						<input type="password" id="password" name="upass" required maxlength="20" placeholder="Confirm your password">
 					</div>
 					<div class="input-container">
 						<label for="mob">Mobile</label> 
-						<input type="text" id="mob" name="mob" required placeholder="Contact Number">
+						<input type="number" id="mob" name="mob" required min="6000000000" max="9999999999" placeholder="Contact Number">
 					</div>
 					<div class="input-container">
 						<label for="donate-bloodGroup">Blood Group</label> 

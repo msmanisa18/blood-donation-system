@@ -43,11 +43,11 @@
 				<form action="loginServlet" method="POST">
 					<div class="input-container">
 						<label for="email">Email</label>
-						<input type="email" id="email" name="email" required placeholder="Enter your email">
+						<input type="email" id="email" name="email" required maxlength="30" placeholder="Enter your email">
 					</div>
 					<div class="input-container">
 						<label for="password">Password</label> 
-						<input type="password" id="password" name="password" required placeholder="Enter your password">
+						<input type="password" id="password" name="password" required maxlength="20" placeholder="Enter your password">
 					</div>
 					<button type="submit" class="login-btn">Login</button>
 				</form>

@@ -3,6 +3,8 @@ package com.bds.controller;
 import java.io.IOException;
 
 import com.bds.bean.UserBean;
+import com.bds.bean.UserDtlsBean;
+import com.bds.bean.UserRoleBean;
 import com.bds.dao.LoginDao;
 import com.bds.util.EncryptionDecryptionUtil;
 
@@ -33,13 +35,19 @@ public class LoginServlet extends HttpServlet {
 		UserBean userBean = new UserBean();
 		userBean.setUserEmail(email);
 		userBean.setUserPwd(password);
-		userBean = LoginDao.validateLogin(userBean);
+		UserDtlsBean userDtlsBean = LoginDao.validateLogin(userBean);
+		userBean = userDtlsBean.getUserBean();
 		String userRole = userBean.getUserRole();
+		UserRoleBean userRoleBean = userDtlsBean.getUserRoleBean();
 		if (!"NOT_FOUND".equals(userRole)) {
 			sessionObj.setAttribute("userName", userBean.getUserName());
 			sessionObj.setAttribute("userEmail", userBean.getUserEmail());
 			sessionObj.setAttribute("userMob", userBean.getUserMob());
 			sessionObj.setAttribute("bloodGrp", userBean.getBloodGrp());
+			sessionObj.setAttribute("count_donor", userRoleBean.getDonorCount());
+			sessionObj.setAttribute("count_organizer", userRoleBean.getOrganizerCount());
+			sessionObj.setAttribute("count_patient", userRoleBean.getPatientCount());
+			sessionObj.setAttribute("count_volunteer", userRoleBean.getVolunteerCount());
 		} else {
 			sessionObj.setAttribute("ERR_MSG", "Login Failed, please try again.");
 		}

@@ -30,6 +30,7 @@
         <li><a href="admin_patient.jsp"><i class="fas fa-user-injured"></i> Patients</a></li>
         <li><a href="admin_event.jsp"><i class="fas fa-calendar"></i> Events</a></li>
         <li><a href="admin_organizer.jsp"><i class="fas fa-calendar"></i> Organizers</a></li>
+         <li><a href="messagesServlet"><i class="fas fa-calendar"></i> Messages</a></li>
         <li><a href="admin_settings.jsp"><i class="fas fa-cog"></i> Settings</a></li>
         <li><a href="logoutServlet"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>

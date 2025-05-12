@@ -20,7 +20,9 @@ public final class Constants {
 	public static final String SHA_KEY = "PBKDF2WithHmacSHA256";
 	public static final String AES = "AES";
 	public static final String AES_PADDING = "AES/CBC/PKCS5Padding";
-	public static final String QUERY_SELECT_USR = "SELECT user_name, user_mob, user_role, blood_grp from user_dtls WHERE user_email = ? and user_passwd = ?";
+	public static final String QUERY_SELECT_USR = "SELECT user_name, user_mob, user_role, blood_grp FROM user_dtls WHERE user_email = ? and user_passwd = ?";
 	public static final String QUERY_CREATE_USR = "INSERT INTO user_dtls (user_name, user_email, user_passwd, user_mob, user_role, blood_grp) VALUES (?, ?, ?, ?, ?, ?)";
 	public static final String QUERY_CONTACT_US = "INSERT INTO contact_us (user_name, user_email, user_mob, user_msg) VALUES (?, ?, ?, ?)";
+	public static final String QUERY_COUNT_USR = "select user_role from user_dtls";
+	public static final String QUERY_MESSAGES = "SELECT user_name, user_email, user_mob, user_msg FROM contact_us";
 }

@@ -1,10 +1,18 @@
 <%
 	HttpSession sessionObj = request.getSession();
 	String userName = "";
+	String countDonor = "";
+	String countOrganizer = "";
+	String countPatient = "";
+	String countVolunteer = "";
 	if (sessionObj == null || sessionObj.getAttribute("userName") == null) {
 		response.sendRedirect("login.jsp");
 	} else {
-		userName = sessionObj.getAttribute("userName").toString();
+		userName = (String)sessionObj.getAttribute("userName");
+		countDonor = (String)sessionObj.getAttribute("count_donor");
+		countOrganizer = (String)sessionObj.getAttribute("count_organizer");
+		countPatient = (String)sessionObj.getAttribute("count_patient");
+		countVolunteer = (String)sessionObj.getAttribute("count_volunteer");
 	}
 %>
 
@@ -29,6 +37,7 @@
         <li><a href="admin_patient.jsp"><i class="fas fa-user-injured"></i> Patients</a></li>
         <li><a href="admin_event.jsp"><i class="fas fa-calendar"></i> Events</a></li>
         <li><a href="admin_organizer.jsp"><i class="fas fa-calendar"></i> Organizers</a></li>
+        <li><a href="messagesServlet"><i class="fas fa-calendar"></i> Messages</a></li>
         <li><a href="admin_settings.jsp"><i class="fas fa-cog"></i> Settings</a></li>
         <li><a href="logoutServlet"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
@@ -49,7 +58,7 @@
         <div class="card" onclick="window.location='admin_donor.jsp';">
           <i class="fas fa-users"></i>
           <h3>Total Donors</h3>
-          <p>1,250</p>
+          <p><%= null == countDonor ? "0" : countDonor %></p>
         </div>
         <div class="card" onclick="window.location='admin_blood_bank.jsp';">
           <i class="fas fa-hospital"></i>
@@ -59,14 +68,14 @@
         <div class="card" onclick="window.location='admin_volunteer.jsp';">
           <i class="fas fa-user-md"></i>
           <h3>Active Volunteers</h3>
-          <p>320</p>
+          <p><%= null == countVolunteer ? "0" : countVolunteer %></p>
         </div>
         </section>
         <section class="dashboard">
          <div class="card" onclick="window.location='admin_patient.jsp';">
           <i class="fas fa-user-md"></i>
           <h3>Patients Registered</h3>
-          <p>320</p>
+          <p><%= null == countPatient ? "0" : countPatient %></p>
         </div>       
         <div class="card" onclick="window.location='admin_event.jsp';">
           <i class="fas fa-hospital"></i>
@@ -76,7 +85,7 @@
         <div class="card" onclick="window.location='admin_organizer.jsp';">
           <i class="fas fa-user-md"></i>
           <h3>Registered Organizers</h3>
-          <p>780</p>
+          <p><%= null == countOrganizer ? "0" : countOrganizer %></p>
         </div>
       </section>
 </div>

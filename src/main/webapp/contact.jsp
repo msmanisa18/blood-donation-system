@@ -45,22 +45,20 @@
 			<form id="contact-form" method="post" action="contactUsServlet">
 				<p style="color: #167b9b;"><%= contactMsg %></p>
 				<div class="input-group">
-					<label for="name">Name</label> <input type="text" id="name"
-						placeholder="Enter your name" name="u_name" /> <small class="error-message"></small>
-				</div>
-
-				<div class="input-group">
-					<label for="email">Email</label> <input type="email" id="email"
-						placeholder="Enter your email" name="u_email" /> <small class="error-message"></small>
+					<label for="u_name">Name</label> 
+					<input type="text" name="u_name" id="name" required maxlength="30" placeholder="Enter your name" />
 				</div>
 				<div class="input-group">
-					<label for="email">Mobile</label> <input type="tel" id="mobile"
-						placeholder="Enter your contact number" name="u_mob" /> <small class="error-message"></small>
+					<label for="u_email">Email</label> 
+					<input type="email" id="email" name="u_email" required maxlength="30" placeholder="Enter your email" /> 
 				</div>
 				<div class="input-group">
-					<label for="message">Message</label>
-					<textarea id="message" rows="5" placeholder="Write your message" name="u_msg"></textarea>
-					<small class="error-message"></small>
+					<label for="u_mob">Mobile</label> 
+					<input type="number" id="mobile" name="u_mob" required min="6000000000" max="9999999999" placeholder="Enter your contact number" /> 
+				</div>
+				<div class="input-group">
+					<label for="u_msg">Message</label>
+					<textarea id="message" rows="5" placeholder="Write your message" name="u_msg" required maxlength="300"></textarea>
 				</div>
 
 				<button type="submit">Send Message</button>
